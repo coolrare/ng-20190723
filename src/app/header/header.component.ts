@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   count = 0;
   keyword = '';
+  isHighlight = false;
+  fontSize = 50;
 
   constructor() { }
 
@@ -20,6 +22,8 @@ export class HeaderComponent implements OnInit {
     console.log(evt.altKey);
     this.count++;
     this.keyword += '!';
+    this.isHighlight = !this.isHighlight;
+    this.fontSize += 2;
   }
 
 }
