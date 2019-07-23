@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
   @Output()
   doSearch = new EventEmitter();
 
-  constructor() { }
+  constructor(private articleSerivce: ArticleService) { }
 
   ngOnInit() {
   }
