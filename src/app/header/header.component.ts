@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   count = 0;
+  keyword = '';
+
   constructor() { }
 
   ngOnInit() {
@@ -17,6 +19,7 @@ export class HeaderComponent implements OnInit {
     console.log(input.value);
     console.log(evt.altKey);
     this.count++;
+    this.keyword += '!';
   }
 
 }
