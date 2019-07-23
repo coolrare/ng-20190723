@@ -60,5 +60,11 @@ export class AppComponent {
       "favorited": false,
       "favoritesCount": 5
     }
-  ]
+  ];
+
+  originalArticles = this.list;
+
+  filterArticles(keyword: string) {
+    this.list = this.originalArticles.filter(item => item.title.indexOf(keyword) !== -1);
+  }
 }
