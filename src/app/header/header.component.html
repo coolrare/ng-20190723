@@ -4,9 +4,7 @@
       [ngClass]="{highlight: isHighlight}"
       [ngStyle]="{'font-size.px': fontSize }"
       href="index.html">conduit</a> -->
-    <a class="navbar-brand"
-      [class.highlight]="isHighlight"
-      [style.font-size.px]="fontSize"
+    <a class="navbar-brand" [class.highlight]="isHighlight" [style.font-size.px]="fontSize"
       href="index.html">conduit</a>
     <!-- <input class="form-control form-control-sm search-input"
 
@@ -26,5 +24,19 @@
       <i class="ion-search"></i>
     </button>
     {{ keyword }}
+
+    <span class="highlight">
+      <span *ngIf="keyword === ''; then noKeyword; else yourKeyword"></span>
+    </span>
+    <!-- <span class="highlight" *ngIf="keyword !== ''"></span> -->
+
+    <ng-template #noKeyword>
+      <span>請輸入查詢條件</span>
+    </ng-template>
+
+    <ng-template #yourKeyword>
+      <span>你輸入了：{{ keyword }}</span>
+    </ng-template>
+
   </div>
 </nav>
