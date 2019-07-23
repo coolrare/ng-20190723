@@ -26,9 +26,11 @@
     {{ keyword }}
 
     <span class="highlight">
-      <span *ngIf="keyword === ''; then noKeyword; else yourKeyword"></span>
+      <span>
+        <ng-container *ngIf="keyword === ''; else yourKeyword"></ng-container>
+      </span>
+
     </span>
-    <!-- <span class="highlight" *ngIf="keyword !== ''"></span> -->
 
     <ng-template #noKeyword>
       <span>請輸入查詢條件</span>
@@ -40,3 +42,17 @@
 
   </div>
 </nav>
+
+<!-- ng-container, *ngTemplateOutlet 常見組合 -->
+<!--
+<td>
+  <ng-container *ngTemplateOutlet="noData"></ng-container>
+</td>
+<td>
+  <ng-container *ngIf="keyword === ''; then noData; else yourKeyword"></ng-container>
+</td>
+
+<ng-template #noData>
+  --
+</ng-template>
+-->
