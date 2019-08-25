@@ -17,6 +17,9 @@ export class AppComponent implements OnInit {
   // list = this.articleService.list;
   list: Article[];
 
+  list$ = this.articleService.queryArticles();
+
+  keyword = '';
   constructor(private articleService: ArticleService) {}
 
   ngOnInit() {
@@ -25,12 +28,13 @@ export class AppComponent implements OnInit {
     //   this.list = result.articles;
     // });
 
-    this.articleService.queryArticles().subscribe(articles => {
-      this.list = articles;
-    });
+    // this.articleService.queryArticles().subscribe(articles => {
+    //   this.list = articles;
+    // });
   }
 
   filterArticles(keyword: string) {
-    this.articleService.filterArticles(keyword);
+    // this.articleService.filterArticles(keyword);
+    this.keyword = keyword;
   }
 }
